@@ -23,6 +23,7 @@
 		//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/dns-message"));
 		$response = curl_exec($ch);
 		$statuscode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
 		curl_close($ch);
@@ -39,6 +40,7 @@
 		//curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 		//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/dns-message"));
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
 		$response = curl_exec($ch);
